@@ -6,7 +6,8 @@ public class CBackgroundLoop : MonoBehaviour
 {
     private float width;
 
-    private void Awake() {
+    private void Awake()
+    {
         BoxCollider2D backgroundCollider = GetComponent<BoxCollider2D>();
         width = backgroundCollider.size.x;
     }
@@ -14,14 +15,15 @@ public class CBackgroundLoop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x <= width)
+        if (transform.position.x <= -width)
         {
             Reposition();
         }
     }
 
-    private void Reposition() {
+    private void Reposition()
+    {
         Vector2 offset = new Vector2(width * 2f, 0);
-        transform.position = (Vector2) transform.position + offset;
+        transform.position = (Vector2)transform.position + offset;
     }
 }
