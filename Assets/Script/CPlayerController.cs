@@ -12,9 +12,12 @@ public class CPlayerController : MonoBehaviour
     [SerializeField]
     public Button m_ShootBtn;
 
+    [SerializeField]
+    public GameObject m_BulletNormal;
+
     private Rigidbody2D rb;
     private float width;
-    private GameObject m_AttackPrefab = null;
+    //private GameObject m_AttackPrefab = null;
 
     void Start()
     {
@@ -43,7 +46,9 @@ public class CPlayerController : MonoBehaviour
 
     private void Shoot()
     {
-        m_AttackPrefab = Resources.Load<GameObject>("Prefabs/Attack");
-        Instantiate(m_AttackPrefab, this.transform.position, Quaternion.identity);
+        //m_AttackPrefab = Resources.Load<GameObject>("Prefabs/Bullet_Normal");
+        GameObject _bullet = Instantiate(m_BulletNormal, this.transform.position + Vector3.left, Quaternion.identity);
+        Rigidbody2D rigid = _bullet.GetComponent<Rigidbody2D>();
+        rigid.AddForce(Vector2.left * 10, ForceMode2D.Impulse);
     }
 }
