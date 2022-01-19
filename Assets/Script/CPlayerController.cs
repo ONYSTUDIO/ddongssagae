@@ -16,7 +16,9 @@ public class CPlayerController : MonoBehaviour
     public GameObject m_BulletNormal;
 
     private Rigidbody2D rb;
-    private float width;
+    private float jumpPower = 5.0f;
+    private bool isJumping = false;
+    //private float width; // 이거 어디에 쓰지..??
     //private GameObject m_AttackPrefab = null;
 
     void Start()
@@ -25,11 +27,27 @@ public class CPlayerController : MonoBehaviour
 
         m_JumpBtn.OnClickAsObservable().Subscribe(_ =>
         {
-            Debug.Log("### Jump!!");
-            BoxCollider2D backgroundCollider = GetComponent<BoxCollider2D>();
-            width = backgroundCollider.size.x;
+            //BoxCollider2D backgroundCollider = GetComponent<BoxCollider2D>();
+            //width = backgroundCollider.size.x;
+            if (!isJumping)
+            {
+                if (isJumping == false) //점프 중이지 않을 때
+                {
+                    rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse); //위쪽으로 힘을 준다.
+                    isJumping = true;
+                }
+                else return; //점프 중일 때는 실행하지 않고 바로 return.
 
-            Jump();
+                // Debug.Log("### Jump!!");
+                // isJumping = true;
+                // rb.AddForce(Vector3.up * 300f);
+                //Jump();
+            }
+            else
+            {
+                Debug.Log("### Disable Jump..");
+                return;
+            }
         });
 
         m_ShootBtn.OnClickAsObservable().Subscribe(_ =>
@@ -42,6 +60,17 @@ public class CPlayerController : MonoBehaviour
     private void Jump()
     {
         rb.AddForce(new Vector3(0f, 300f, 0f));
+        rb.AddForce(Vector3.up * 300f);
+        //rb.AddForce(new Vector2(0.0f, jumppower * Time.deltaTime), ForceMode2D.Impulse);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+       if (collision.gameObject.CompareTag("Ground"))
+       {
+           Debug.Log("### Touch Ground");
+           isJumping = false;
+       }
     }
 
     private void Shoot()
