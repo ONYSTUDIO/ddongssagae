@@ -18,7 +18,7 @@ public class CLoginManager : MonoBehaviour
         m_LoginBtn.OnClickAsObservable().Subscribe(_ =>
         {
             Debug.Log("###");
-            SceneManager.LoadScene("StageScene");
+            SceneManager.LoadScene("SelectScene");
         });
     }
 
