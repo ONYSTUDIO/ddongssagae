@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
+using static CConstants;
 
 public class CPlayerController : MonoBehaviour
 {
+    [SerializeField]
+    public GameObject m_Player;
+
     [SerializeField]
     public Button m_JumpBtn;
 
@@ -15,14 +19,37 @@ public class CPlayerController : MonoBehaviour
     [SerializeField]
     public GameObject m_BulletNormal;
 
+    public static int playerType;
     private Rigidbody2D rb;
     private float jumpPower = 5.0f;
     private bool isJumping = false;
+    private SpriteRenderer spriteRenderer;
     //private float width; // 이거 어디에 쓰지..??
     //private GameObject m_AttackPrefab = null;
 
+    // public void Setup()
+    // {
+    //     spriteRenderer = m_Player.GetComponent<SpriteRenderer>();
+    //     spriteRenderer.sprite = CConstants.PLAYER_TYPE;
+    // }
+
+    // void Awake() {
+    //     Debug.Log("### 1) Select : " + CConstants.PLAYER_TYPE);
+    //     Debug.Log("### 2) Select : " + CConstants.GetResourcesPath(playerType));
+    //     playerType = CConstants.PLAYER_TYPE;
+    //     //Setup();
+    //     spriteRenderer = m_Player.GetComponent<SpriteRenderer>();
+    //     spriteRenderer.sprite = Resources.Load<Sprite>(CConstants.GetResourcesPath(playerType)) as Sprite;
+    // }
     void Start()
     {
+        Debug.Log("### 1) Select : " + CConstants.PLAYER_TYPE);
+        Debug.Log("### 2) Select : " + CConstants.GetResourcesPath(playerType));
+        playerType = CConstants.PLAYER_TYPE;
+        // //Setup();
+        spriteRenderer = m_Player.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = Resources.Load<Sprite>(CConstants.GetResourcesPath(playerType)) as Sprite;
+
         rb = GetComponent<Rigidbody2D>();
 
         m_JumpBtn.OnClickAsObservable().Subscribe(_ =>

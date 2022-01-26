@@ -1127,9 +1127,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_JjajangBtn: {fileID: 250967584}
+  m_JjajangImg: {fileID: 21300000, guid: 225466693f727e64e8345278fb0f322f, type: 3}
   m_HoduBtn: {fileID: 1308595380}
+  m_HoduImg: {fileID: 21300000, guid: a4be359d162d18944a7e9505204b2c88, type: 3}
   m_JjangaBtn: {fileID: 1597533033}
+  m_JjangaImg: {fileID: 21300000, guid: 30cfb6ee40e767141a83805a01a12cea, type: 3}
   m_DubuBtn: {fileID: 1519176950}
+  m_DubuImg: {fileID: 21300000, guid: 89056bc072696664c800aba345c31c7c, type: 3}
+  m_NextBtn: {fileID: 305064833}
 --- !u!1 &1519176948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1486,12 +1491,12 @@ GameObject:
   - component: {fileID: 1677833129}
   - component: {fileID: 1677833128}
   m_Layer: 5
-  m_Name: Image
+  m_Name: On
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1677833127
 RectTransform:
   m_ObjectHideFlags: 0

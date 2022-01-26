@@ -788,6 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70951c4395404044e89bac6755b990b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Player: {fileID: 616412436}
   m_JumpBtn: {fileID: 657740297}
   m_ShootBtn: {fileID: 1490022924}
   m_BulletNormal: {fileID: 5475103788932912283, guid: c114f0c18aab0fa41807ebd0daec5129,
