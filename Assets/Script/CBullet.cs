@@ -8,7 +8,7 @@ public class CBullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "BoarderBullet")
         {
-            Debug.Log("### Destroy!!");
+            Debug.Log("### Destroy Bullet!!");
             Destroy(gameObject);
         }
     }
