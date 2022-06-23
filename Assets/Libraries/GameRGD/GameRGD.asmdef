@@ -1,0 +1,25 @@
+{
+    "name": "GameRGD",
+    "rootNamespace": "",
+    "references": [
+        "GUID:9e24947de15b9834991c9d8411ea37cf",
+        "GUID:69448af7b92c7f342b298e06a37122aa",
+        "GUID:84651a3751eca9349aac36a66bba901b",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:5c01796d064528144a599661eaab93a6",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:570288d68c06d364a82f87aca0bc1a34",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:b3f49edfedc855a48aa1a9e5d3cba438",
+        "GUID:f06555f75b070af458a003d92f9efb00"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
